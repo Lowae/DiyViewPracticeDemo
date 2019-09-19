@@ -6,19 +6,11 @@
     android:orientation="vertical">
 
 
-    <com.hao.diyviewpracticedemo.view.CarPathView
-        android:id="@+id/car_anim_view"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/start_btn"
-        app:MoveDrawableRes="@mipmap/rocket"
-        app:MoveDuration="10" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/start_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="启动!!!" />
+    </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

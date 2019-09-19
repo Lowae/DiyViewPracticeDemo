@@ -22,7 +22,7 @@ import com.hao.diyviewpracticedemo.R;
 
 import androidx.annotation.Nullable;
 
-public class CarPathView extends View {
+public class PathView extends View {
 
     private int mPathColor = Color.RED;
 
@@ -56,11 +56,11 @@ public class CarPathView extends View {
     private Bitmap mBitmap;
 
 
-    public CarPathView(Context context) {
+    public PathView(Context context) {
         this(context, null);
     }
 
-    public CarPathView(Context context, @Nullable AttributeSet attrs) {
+    public PathView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         //这里是要获取到自定义View的属性值，便不再过多介绍
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.MoveView);
@@ -79,7 +79,7 @@ public class CarPathView extends View {
         initPaint();
     }
 
-    public CarPathView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public PathView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
