@@ -70,7 +70,7 @@ public class PathView extends View {
 
         //这里是获取要移动的图片
         if (mDrawable == null){
-            mBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.car);
+            mBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.rocket);
         }else {
             mBitmap = ((BitmapDrawable) mDrawable).getBitmap();
         }
