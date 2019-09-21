@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     {
         list.add("画线循迹-Path的使用");
         list.add("雷达图加动画实现");
+        list.add("数独");
     }
 
     @Override
@@ -74,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case 1:
                             startActivity(new Intent(context, RadarViewActivity.class));
+                            break;
+                        case 2:
+                            startActivity(new Intent(context, SudukuActivity.class));
+                            break;
                         default:
                             break;
                     }

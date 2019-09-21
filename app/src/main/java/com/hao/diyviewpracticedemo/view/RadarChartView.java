@@ -17,26 +17,41 @@ import androidx.annotation.Nullable;
 
 public class RadarChartView extends View {
 
+    //总共的边界数
     private int dataCount = 6;
+    //每个的角度
     private float angle = (float) (Math.PI * 2 / dataCount);
+    //半径
     private float radius;
+    //中心点
     private int centerX;
     private int centerY;
+    //雷达图边界显示文字
     private String[] strings = {"Jup", "Kum", "Pok", "Tut", "Kak", "Buu"};
     private double[] drawed = new double[6];
+    //边界值
     private double[] data = {100, 60, 60, 60, 100, 30};
+    //最大值
     private final float MAX_Value = 100;
 
+    //绘制雷达的path
     private Path radarPath;
+    //绘制虚线用
     private DashPathEffect dashPathEffect;
 
+    //绘制覆盖区域用
     private Path regionPath;
 
+    //测量文字大小
     private Paint.FontMetrics fontMetrics;
 
+    //绘制雷达边界
     private Paint radarPaint;
+    //绘制实际数值
     private Paint valuePaint;
+    //绘制边界文字
     private Paint textPaint;
+    //绘制中心文字
     private Paint centerTextPaint;
 
 
@@ -56,6 +71,7 @@ public class RadarChartView extends View {
     }
 
     private void init() {
+
         radarPath = new Path();
         dashPathEffect = new DashPathEffect(new float[]{20, 10, 15, 5}, 0);
         regionPath = new Path();
@@ -102,7 +118,9 @@ public class RadarChartView extends View {
         drawRegion(canvas);
     }
 
-
+    /**
+     * 绘制雷达图背景
+     */
     private void drawRader(Canvas canvas) {
         radarPaint.setPathEffect(null);
         float gap = radius / (dataCount - 1);
