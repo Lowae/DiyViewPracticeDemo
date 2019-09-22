@@ -154,4 +154,29 @@ public class Sudoku {
             resetSudoku(level);
         }
     }
+
+    /**
+     * 检验数独是否是有效的，思想和求解一样
+     */
+    public boolean ckeckSudoku(int[][] board) {
+        boolean[][] rows = new boolean[9][9];
+        boolean[][] cols = new boolean[9][9];
+        boolean[][] boxes = new boolean[9][9];
+
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                int num = board[i][j];
+                if (num != 0) {
+                    int boxIndex = (i / 3) * 3 + j / 3;
+                    int numIndex = num - 1;
+                    if (rows[i][numIndex] || cols[j][numIndex] || boxes[boxIndex][numIndex]) {
+                        return false;
+                    } else {
+                        rows[i][numIndex] = cols[j][numIndex] = boxes[boxIndex][numIndex] = true;
+                    }
+                }
+            }
+        }
+        return true;
+    }
 }

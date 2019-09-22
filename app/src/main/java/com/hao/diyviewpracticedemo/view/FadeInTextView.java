@@ -2,9 +2,6 @@ package com.hao.diyviewpracticedemo.view;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.animation.LinearInterpolator;
 
@@ -27,8 +24,6 @@ import androidx.appcompat.widget.AppCompatTextView;
  */
 
 public class FadeInTextView extends AppCompatTextView {
-
-    private Rect textRect = new Rect();
 
     private StringBuffer stringBuffer = new StringBuffer();
 
@@ -61,30 +56,7 @@ public class FadeInTextView extends AppCompatTextView {
 
     }
 
-    @Override
-    protected void onDraw(final Canvas canvas) {
-        super.onDraw(canvas);
-//        使用setText代替重绘就不用自己去绘制text了
-//        if (stringBuffer != null) {
-//            drawText(canvas, stringBuffer.toString());
-//        }
-    }
 
-    /**
-     * 绘制文字
-     *
-     * @param canvas 画布
-     */
-    private void drawText(Canvas canvas, String textString) {
-        textRect.left = getPaddingLeft();
-        textRect.top = getPaddingTop();
-        textRect.right = getWidth() - getPaddingRight();
-        textRect.bottom = getHeight() - getPaddingBottom();
-        Paint.FontMetricsInt fontMetrics = getPaint().getFontMetricsInt();
-        int baseline = (textRect.bottom + textRect.top - fontMetrics.bottom - fontMetrics.top) / 2;
-        //文字绘制到整个布局的中心位置
-        canvas.drawText(textString, getPaddingLeft(), baseline, getPaint());
-    }
 
     /**
      * 文字逐个显示动画  通过插值的方式改变数据源
@@ -112,15 +84,7 @@ public class FadeInTextView extends AppCompatTextView {
                         }
                     }
 
-                    //新思路的做法
                     setText(stringBuffer.toString());
-
-                    /**
-                     * 之前的做法刷新重绘text,需要自己控制文字的绘制，
-                     * 看到网友的评论开拓了思路，既然是直接集成TextView
-                     * 就可以直接使用setText()方法进行设置值了
-                     */
-                    //invalidate();老思路的做法
                 }
             }
         });

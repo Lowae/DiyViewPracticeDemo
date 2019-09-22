@@ -113,7 +113,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_generate_middle"
-        android:text="别点！！！"
+        android:text="困难难度！"
         android:layout_alignParentStart="true">
     </Button>
 
@@ -145,7 +145,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_confirm"
-        android:text="想看么"
+        android:text="答案"
         android:layout_alignParentEnd="true">
 
     </Button>

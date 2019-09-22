@@ -64,18 +64,9 @@ public class SudukuActivity extends AppCompatActivity {
         findViewById(R.id.btn_confirm).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int[][] confirm = new int[9][9];
-                for (int i = 0; i < 9; i++) {
-                    System.arraycopy(board[i], 0, confirm[i], 0, 9);
-                }
-                if (sudoku.solveSudoku(confirm)) {
-                    fadeInTextView.stopFadeInAnimation();
-                    fadeInTextView.setTextString("正确。。Please 不要还没填完就点这个！").startFadeInAnimation().setTextAnimationListener(new FadeInTextView.TextAnimationListener() {
-                        @Override
-                        public void animationFinish() {
-                            fadeInTextView.setText(" ");
-                        }
-                    });
+
+                if (sudoku.ckeckSudoku(board)) {
+                    fadeInTextView.setTextString("正确。。").startFadeInAnimation();
                 } else {
                     Toast.makeText(mContext, "请验证!", Toast.LENGTH_SHORT).show();
                 }
