@@ -8,21 +8,6 @@ import android.view.animation.LinearInterpolator;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 
-/**
- * Created by allen on 2017/6/5.
- * <p>
- * 字符串逐字显示的view
- *   fadeInTextView
- *               .setTextString("自己的字符串")
- *               .startFadeInAnimation()
- *               .setTextAnimationListener(new FadeInTextView.TextAnimationListener() {
- *                   @Override
- *                   public void animationFinish() {
- *
- *                   }
- *               });
- */
-
 public class FadeInTextView extends AppCompatTextView {
 
     private StringBuffer stringBuffer = new StringBuffer();
